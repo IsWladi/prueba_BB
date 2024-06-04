@@ -1,6 +1,16 @@
 import re
 
-def palabra_mas_frecuente(texto: str, lista_ignorar: list) -> str:
+def palabra_mas_frecuente(texto: str, lista_ignorar: list) -> list:
+    """
+    Devuelve una lista con la/s palabra/s más frecuente/s del texto dado respetando la lista de palabras a ignorar.
+
+        parametros:
+            texto -- texto a analizar.
+            lista_ignorar -- lista de palabras a ignorar.
+
+        return:
+            list -- retorna una lista con las palabras más frecuentes.
+    """
     # texto en lowercase y obtener lista con palabras (sin incluir puntuación, se hace mediante RegEx)
     texto = texto.lower()
     palabras = re.findall(r"\w+", texto)
@@ -12,7 +22,6 @@ def palabra_mas_frecuente(texto: str, lista_ignorar: list) -> str:
     for palabra in palabras:
         # pagina para testear expresiones regulares: https://regex101.com/
         # ([\., ]|^)palabra([\., ]|$)
-        # patron =  "([\., ]|^)" + palabra + "([\., ]|$)"
         patron =  rf"([\., ]|^){palabra}([\., ]|$)"
         frecuencia = len(re.findall(patron, texto))
         diccionario_frecuencias[palabra] = frecuencia

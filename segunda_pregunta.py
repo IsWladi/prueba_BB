@@ -10,8 +10,8 @@ class Circulo_social():
                 lista_personas -- lista de personal a validar representados con numeros, ejemplo; [1,2] o [1,3,6]
 
             return:
-                True -- si son amigos
-                False -- si no son amigos
+                True -- si son amigos.
+                False -- si no son amigos.
 
             errores:
                 Exception -- no se permiten personas duplicadas, por ejemplo; [1, 1] o [2, 3, 2] son invalidos.
@@ -27,10 +27,10 @@ class Circulo_social():
 
     def obtener_amigos(self, id: int) -> list:
         """
-        Obtiene los amigos que tiene la persona
+        Obtiene los amigos que tiene la persona.
 
             parametros:
-                persona_id -- numero que representa a la persona
+                persona_id -- numero que representa a la persona.
 
             return:
                 list -- retorna una lista de listas con sus amigos y relaciones.
@@ -45,6 +45,16 @@ class Circulo_social():
 
 
     def comun(self, i: int, j: int) -> bool:
+        """
+        Valida que 'i' y 'j' tengan al menos 1 amigo en comun.
+
+            parametros:
+                i -- numero que representa a una persona
+                j -- numero que representa a una persona
+
+            return:
+                bool -- retorna True o False si tienen al menos 1 amigo en comun
+        """
         # validar errores
         if i == j:
             raise Exception("Error: 'i' y 'j' no pueden ser iguales")
