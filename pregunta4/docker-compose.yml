@@ -1,0 +1,10 @@
+services:
+  db:
+    build: .
+    environment:
+      - POSTGRES_DB=bb_db_postgresql
+      - POSTGRES_PASSWORD=misupercontrasena123
+    user: postgres # https://stackoverflow.com/questions/60193781/postgres-with-docker-compose-gives-fatal-role-root-does-not-exist-error
+
+# psql -d bb_db_postgresql
+
